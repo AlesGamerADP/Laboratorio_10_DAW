@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: laboratorio11
+    env: docker
+    plan: free
+    region: oregon
+    dockerfilePath: ./Dockerfile
+    buildCommand: "./mvnw clean package -DskipTests"
+    startCommand: "java -jar target/*.jar"
+    envVars:
+      - key: PORT
+        value: 8086
