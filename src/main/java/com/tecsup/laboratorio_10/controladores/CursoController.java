@@ -22,6 +22,16 @@ public class CursoController {
     @Autowired
     private CursoService servicio;
 
+    @GetMapping("/docente")
+    public String redirectListar() {
+        return "redirect:/listar";
+    }
+
+    @GetMapping("/")
+    public String redirectToListar() {
+        return "redirect:/listar";
+    }
+
     @RequestMapping(value = {"/listar"}, method = RequestMethod.GET)
     public String listar(Model model) {
         model.addAttribute("titulo", "Listado de Cursos CJAVA");
